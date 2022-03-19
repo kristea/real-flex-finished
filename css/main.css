@@ -104,29 +104,15 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 0 2em;
   font-size: 1.25em;
   height: 100%;
+  color: white;
 }
 
-header, footer {
-    height: 80px;
-    width: 100%;
-}
-
-header {
-    font-size: 2rem;
-    color: white;
-    font-family: 'Lora', serif;
-}
-
-main {
-    color: white;
-    font-size: 1.5em;
-    height: 200px;
-    width: 100%;
-    padding-top: 60px;
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 header,
@@ -135,28 +121,38 @@ footer {
     display: flex;
 }
 
+header {
+    font-size: 2rem;
+    font-family: 'Lora', serif;
+}
+
+main {
+    font-size: 1.5em;
+    width: 100%;
+}
+
 .wrapper {
   /*add display:flex and set justify-content to space-between*/
   font-weight: 500;
   display: flex;
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
+  flex-flow: row;
+  flex-wrap: wrap;
+  
 }
 
 .div-1, .div-2, .div-3 {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
   line-height: 1.6em;
   font-size: 1.2em;
   background-color: teal;
-  height: 300px;
   width: 30%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  
 }
 
 .div-2 {
@@ -167,7 +163,6 @@ footer {
 }
 
 footer {
-    color: white;
     justify-content: center;
 }
 
@@ -335,3 +330,30 @@ footer {
         page-break-after: avoid;
     }
 }
+
+@media (max-width:605px) {
+    
+    .wrapper {
+        font-weight: 500;
+        display: flex;
+        width: 100%;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        flex-flow: column;
+        flex-wrap: wrap;
+        
+      }
+      
+      .div-1, .div-2, .div-3 {
+        line-height: 1.6em;
+        font-size: 1.2em;
+        background-color: teal;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .div-2 {
+        border: none;
+      }
+
